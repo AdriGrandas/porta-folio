@@ -1,0 +1,95 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --background: 255 255 255;
+  --foreground: 9 9 11;
+  --card: 255 255 255;
+  --card-foreground: 9 9 11;
+  --popover: 255 255 255;
+  --popover-foreground: 9 9 11;
+  --primary: 24 24 27;
+  --primary-foreground: 250 250 249;
+  --secondary: 244 244 245;
+  --secondary-foreground: 24 24 27;
+  --muted: 244 244 245;
+  --muted-foreground: 113 113 122;
+  --accent: 244 244 245;
+  --accent-foreground: 24 24 27;
+  --destructive: 239 68 68;
+  --destructive-foreground: 250 250 249;
+  --border: 228 228 231;
+  --input: 228 228 231;
+  --ring: 9 9 11;
+  --radius: 0.5rem;
+}
+
+.dark {
+  --background: 9 9 11;
+  --foreground: 250 250 249;
+  --card: 9 9 11;
+  --card-foreground: 250 250 249;
+  --popover: 9 9 11;
+  --popover-foreground: 250 250 249;
+  --primary: 250 250 249;
+  --primary-foreground: 24 24 27;
+  --secondary: 39 39 42;
+  --secondary-foreground: 250 250 249;
+  --muted: 39 39 42;
+  --muted-foreground: 161 161 170;
+  --accent: 39 39 42;
+  --accent-foreground: 250 250 249;
+  --destructive: 127 29 29;
+  --destructive-foreground: 250 250 249;
+  --border: 39 39 42;
+  --input: 39 39 42;
+  --ring: 212 212 216;
+}
+
+@theme {
+  --color-border: hsl(var(--border) / <alpha-value>);
+  --color-input: hsl(var(--input) / <alpha-value>);
+  --color-ring: hsl(var(--ring) / <alpha-value>);
+  --color-background: hsl(var(--background) / <alpha-value>);
+  --color-foreground: hsl(var(--foreground) / <alpha-value>);
+
+  --color-primary: hsl(var(--primary) / <alpha-value>);
+  --color-primary-foreground: hsl(var(--primary-foreground) / <alpha-value>);
+
+  --color-secondary: hsl(var(--secondary) / <alpha-value>);
+  --color-secondary-foreground: hsl(var(--secondary-foreground) / <alpha-value>);
+
+  --color-destructive: hsl(var(--destructive) / <alpha-value>);
+  --color-destructive-foreground: hsl(var(--destructive-foreground) / <alpha-value>);
+
+  --color-muted: hsl(var(--muted) / <alpha-value>);
+  --color-muted-foreground: hsl(var(--muted-foreground) / <alpha-value>);
+
+  --color-accent: hsl(var(--accent) / <alpha-value>);
+  --color-accent-foreground: hsl(var(--accent-foreground) / <alpha-value>);
+
+  --color-popover: hsl(var(--popover) / <alpha-value>);
+  --color-popover-foreground: hsl(var(--popover-foreground) / <alpha-value>);
+
+  --color-card: hsl(var(--card) / <alpha-value>);
+  --color-card-foreground: hsl(var(--card-foreground) / <alpha-value>);
+
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "overline" 0, "pkna" 0;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}

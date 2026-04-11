@@ -1,0 +1,29 @@
+---
+const education = [
+  {
+    institution: 'Universidad Tecnológica',
+    degree: 'Ingeniería en Sistemas',
+    year: '2014 - 2018',
+  },
+  {
+    institution: 'Bootcamp Code Masters',
+    degree: 'Full Stack Web Development',
+    year: '2019',
+  },
+];
+---
+
+<section id="formacion" class="py-20 bg-muted/30">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 class="text-3xl font-bold mb-12">Formación Académica</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      {education.map((edu) => (
+        <div class="p-6 rounded-xl border border-border bg-card">
+          <span class="text-xs font-bold text-primary uppercase tracking-wider">{edu.year}</span>
+          <h3 class="text-xl font-bold mt-2 mb-1">{edu.degree}</h3>
+          <p class="text-muted-foreground">{edu.institution}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
