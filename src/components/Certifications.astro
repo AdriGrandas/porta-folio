@@ -1,26 +1,31 @@
 ---
-const certifications = [
-  { name: 'AWS Certified Solutions Architect', issuer: 'Amazon Web Services', date: '2023' },
-  { name: 'Google UX Design Professional', issuer: 'Coursera', date: '2022' },
-  { name: 'Meta Front-End Developer', issuer: 'Meta', date: '2021' },
-];
+const certifications: { name: string; issuer: string; date: string }[] = [];
 ---
 
 <section id="certificaciones" class="py-20">
   <div class="container mx-auto px-4 sm:px-6 lg:px-8">
     <h2 class="text-3xl font-bold mb-12 text-center">Certificaciones</h2>
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-      {certifications.map((cert) => (
-        <div class="flex items-center gap-4 p-5 rounded-lg border border-border bg-card transition-colors hover:bg-muted/50">
-          <div class="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0">
-             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-award"><path d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"/><circle cx="12" cy="8" r="6"/></svg>
+    {certifications.length > 0 ? (
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {certifications.map((cert) => (
+          <div class="flex items-center gap-4 p-5 rounded-lg border border-border bg-card transition-colors hover:bg-muted/50">
+            <div class="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0">
+               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-award"><path d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"/><circle cx="12" cy="8" r="6"/></svg>
+            </div>
+            <div>
+              <h3 class="font-bold text-sm">{cert.name}</h3>
+              <p class="text-xs text-muted-foreground">{cert.issuer} • {cert.date}</p>
+            </div>
           </div>
-          <div>
-            <h3 class="font-bold text-sm">{cert.name}</h3>
-            <p class="text-xs text-muted-foreground">{cert.issuer} • {cert.date}</p>
-          </div>
+        ))}
+      </div>
+    ) : (
+      <div class="text-center p-8 rounded-xl border border-border bg-card">
+        <div class="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center text-primary mx-auto mb-4">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-award"><path d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"/><circle cx="12" cy="8" r="6"/></svg>
         </div>
-      ))}
-    </div>
+        <p class="text-muted-foreground">Próximamente — Actualmente trabajando en obtener nuevas certificaciones.</p>
+      </div>
+    )}
   </div>
 </section>

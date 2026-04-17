@@ -1,13 +1,8 @@
 ---
 const skills = [
-  { name: 'Astro', category: 'Frameworks' },
-  { name: 'React', category: 'Frontend' },
-  { name: 'Tailwind CSS', category: 'Styles' },
-  { name: 'TypeScript', category: 'Languages' },
-  { name: 'Node.js', category: 'Backend' },
-  { name: 'PostgreSQL', category: 'Database' },
-  { name: 'Git', category: 'Tools' },
-  { name: 'Docker', category: 'Tools' },
+  { name: 'Python', category: 'Lenguajes' },
+  { name: 'HTML', category: 'Frontend' },
+  { name: 'CSS', category: 'Estilos' },
 ];
 ---
 
@@ -17,7 +12,7 @@ const skills = [
       <h2 class="text-3xl font-bold mb-4">Tech Stack</h2>
       <p class="text-muted-foreground">Las tecnologías y herramientas que utilizo para dar vida a mis proyectos.</p>
     </div>
-    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 gap-6">
       {skills.map((skill) => (
         <div class="flex flex-col items-center p-6 rounded-xl border border-border bg-card shadow-sm transition-all hover:border-primary hover:shadow-md">
           <span class="text-lg font-semibold">{skill.name}</span>
